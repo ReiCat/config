@@ -82,15 +82,15 @@ let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 let g:go_fmt_command = "goimports"
 
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_types = 1
-let g:go_auto_sameids = 1 " Highlights same variables cursor on?
+" let g:go_highlight_build_constraints = 1
+" let g:go_highlight_extra_types = 1
+" let g:go_highlight_fields = 1
+" let g:go_highlight_functions = 1
+" let g:go_highlight_methods = 1
+" let g:go_highlight_operators = 1
+" let g:go_highlight_structs = 1
+" let g:go_highlight_types = 1
+let g:go_auto_sameids = 1 " Highlights same variables cursor on
 let g:go_auto_type_info = 1 " Shows variable type in airline
 let g:go_addtags_transform = "snakecase" " Adding json tags to structs with :GoAddTags
 
@@ -102,6 +102,16 @@ let g:airline#extensions#branch#enabled = 1
 " Tab navigation like Firefox.
 " nnoremap <C-S-tab> :bprevious<CR>
 " nnoremap <C-tab>   :bnext<CR>
+
+map <leader>h :wincmd h<CR>
+map <leader>j :wincmd j<CR>
+map <leader>k :wincmd k<CR>
+map <leader>l :wincmd l<CR>
+
+" Open every file with NERDTree
+nnoremap <Leader>pt :NERDTreeToggle<Enter>
+" Check where the file is in the filetree
+nnoremap <silent> <Leader>pv :NERDTreeFind<CR>
 
 " These commands reformats and repositions highlighted text up or down
 vnoremap J :m '>+1<CR>gv=gv
