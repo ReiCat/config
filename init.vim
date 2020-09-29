@@ -1,3 +1,23 @@
+" Settings
+" colorscheme onedark
+syntax on
+
+set background=dark " for onedark colorscheme
+set number          " Show current line number
+set relativenumber  " Show relative line numbers
+set mouse=a
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set smartindent
+set expandtab
+set noswapfile
+set nowrap
+set smartcase
+set incsearch
+set undodir=~/.vim/undodir " Need to create this folder first
+set undofile
+
 call plug#begin('~/.config/nvim/plugged')
 
 " Go
@@ -48,27 +68,31 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'mattn/emmet-vim'
 
-call plug#end()
-
-" gopls
-" let g:go_def_mapping_enabled = 0
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-let g:go_fmt_command = "goimports"
-
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter' " Shows a git diff in the sign column
 
-" Settings
-colorscheme onedark
-set background=dark " for onedark colorscheme
-set number          " Show current line number
-set relativenumber  " Show relative line numbers
-set mouse=a
-set tabstop=4
-set shiftwidth=4
-set expandtab
+call plug#end()
+
+" gopls
+" disable vim-go :GoDef short cut (gd)
+" this is handled by LanguageClient [LC]
+let g:go_def_mapping_enabled = 0
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_fmt_command = "goimports"
+
+" let g:go_highlight_build_constraints = 1
+" let g:go_highlight_extra_types = 1
+" let g:go_highlight_fields = 1
+" let g:go_highlight_functions = 1
+" let g:go_highlight_methods = 1
+" let g:go_highlight_operators = 1
+" let g:go_highlight_structs = 1
+" let g:go_highlight_types = 1
+let g:go_auto_sameids = 1 " Highlights same variables cursor on
+let g:go_auto_type_info = 1 " Shows variable type in airline
+let g:go_addtags_transform = "snakecase" " Adding json tags to structs with :GoAddTags
 
 let g:airline_enable_fugitive=1
 let g:airline#extensions#tabline#enabled = 1
@@ -78,6 +102,16 @@ let g:airline#extensions#branch#enabled = 1
 " Tab navigation like Firefox.
 " nnoremap <C-S-tab> :bprevious<CR>
 " nnoremap <C-tab>   :bnext<CR>
+
+map <leader>h :wincmd h<CR>
+map <leader>j :wincmd j<CR>
+map <leader>k :wincmd k<CR>
+map <leader>l :wincmd l<CR>
+
+" Open every file with NERDTree
+nnoremap <Leader>pt :NERDTreeToggle<Enter>
+" Check where the file is in the filetree
+nnoremap <silent> <Leader>pv :NERDTreeFind<CR>
 
 " These commands reformats and repositions highlighted text up or down
 vnoremap J :m '>+1<CR>gv=gv
