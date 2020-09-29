@@ -1,0 +1,65 @@
+{
+    "gitlens.hovers.currentLine.over": "line",
+    "explorer.confirmDelete": false,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "window.zoomLevel": 0,
+    "editor.fontSize": 13,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintUseMinimalCheckers": true,
+    "python.linting.pylintArgs": [
+        "--enable=W0611", // Unused import %s
+        "--enable=W0612", // Unused variable %r
+        "--enable=W0613", // Unused argument %r
+        "--enable=W0614", // Unused import %s from wildcard import
+        "--disable=C0114", // missing-module-docstring
+        "--disable=C0115", // missing-class-docstring
+        "--disable=C0116", // missing-function-docstring
+        "--disable=C0103", // Invalid %s name "%s"
+        "--max-line-length=150",
+        "--disable=W0108" // Lambda may not be necessary
+    ],
+    "python.venvPath": "~/.virtualenvs",
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${workspaceFolder}"
+    },
+    "breadcrumbs.enabled": true,
+    "workbench.colorTheme": "Monokai",
+    "C_Cpp.updateChannel": "Insiders",
+    "extensions.ignoreRecommendations": false,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "python.jediEnabled": false,
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "workbench.iconTheme": null,
+    // Controls whether the editor should render indent guides
+    "editor.renderIndentGuides": false,
+    "java.semanticHighlighting.enabled": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "python.languageServer": "Microsoft",
+    "go.formatTool": "gofmt",
+    // "vscode_custom_css.imports": ["file///home/hallo/.config/Code/User/.vscodestyles.css"],
+    // "vscode_custom_css.policy": true,
+    "go.coverOnSave": true,
+    "go.coverageDecorator": {
+        "type": "gutter",
+        "coveredHighlightColor": "rgba(64,128,128,0.5)",
+        "uncoveredHighlightColor": "rgba(128,64,64,0.25)",
+        "coveredGutterStyle": "blockgreen",
+        "uncoveredGutterStyle": "blockred"
+    },
+    "go.coverOnSingleTest": true,
+    "go.coverOnSingleTestFile": true,
+    "editor.formatOnSave": true,
+    "go.useLanguageServer": true,
+    "editor.columnSelection": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+}
